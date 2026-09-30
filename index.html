@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chennai Rental Agreement Maker - Rs.199 Instant PDF</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+body{font-family:Arial;margin:0;background:#eef2f7} .header{background:#1a73e8;color:white;padding:20px;text-align:center}
+.form-box{background:white;margin:15px auto;padding:20px;border-radius:12px;max-width:500px}
+input{width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:8px;box-sizing:border-box}
+.btn{color:white;padding:15px;border:none;width:100%;border-radius:8px;font-size:18px;font-weight:bold;cursor:pointer;display:block;text-align:center;text-decoration:none;margin-top:10px}
+.b1{background:#1a73e8} .b2{background:#25D366} .b3{background:#000} .footer{text-align:center;padding:20px;font-size:11px;color:gray}
+</style>
+</head>
+<body>
+<div class="header">
+<h2>🏠 Chennai Rental Agreement Maker</h2>
+<p>Instant PDF in 2 Mins | Rs.199 Only | Valid in Tamil Nadu</p>
+</div>
+
+<div class="form-box">
+<h3>📝 Enter Details</h3>
+<input id="owner" placeholder="Owner Full Name - Eg: Ramesh Kumar">
+<input id="tenant" placeholder="Tenant Full Name - Eg: Suresh">
+<input id="address" placeholder="Full House Address - Eg: No.12, Anna Nagar, Chennai">
+<input id="rent" placeholder="Monthly Rent - Eg: 15000" type="number">
+<input id="deposit" placeholder="Advance Amount - Eg: 75000" type="number">
+<input id="date" type="date">
+
+<button class="btn b1" onclick="generatePDF()">1. Generate PDF Draft</button>
+
+<a class="btn b2" href="upi://pay?pa=vasantha6112000-1@okicici&pn=Vasantha&am=199&cu=INR&tn=Rental Agreement PDF">
+2. Pay Rs.199 via GPay - Click Here
+</a>
+
+<a class="btn b3" href="https://wa.me/919XXXXXXXXX?text=Hi%20I%20paid%20Rs.199%20for%20Rental%20Agreement%20PDF">
+3. Send Payment Screenshot on WhatsApp
+</a>
+
+<p style="text-align:center;color:green;font-weight:bold">After GPay, click Generate again to Download PDF!</p>
+</div>
+
+<div class="form-box">
+<h4>✅ What You Get For Rs.199:</h4>
+<p>✔ 11 Months Agreement - TN Format<br>✔ Owner & Tenant Safety Clauses<br>✔ Print on Rs.100 Stamp Paper<br>✔ 500+ People Used</p>
+</div>
+
+<div class="footer">
+Disclaimer: Draft template only. Print on stamp paper & sign. For registration visit Sub-Registrar office.<br>Contact: vasantha6112000-1@okicici | Chennai<br>© 2026 Chennai Rental Docs
+</div>
+
+<script>
+function generatePDF(){
+ let o=document.getElementById('owner').value;
+ let t=document.getElementById('tenant').value;
+ let a=document.getElementById('address').value;
+ let r=document.getElementById('rent').value;
+ let d=document.getElementById('deposit').value;
+ let dt=document.getElementById('date').value;
+ if(!o||!t||!a||!r){alert("Full details fill pannu da chellam!");return;}
+ const {jsPDF}=window.jspdf;
+ const doc=new jsPDF();
+ doc.setFontSize(16); doc.text("RENTAL AGREEMENT - CHENNAI",50,20);
+ doc.setFontSize(11);
+ doc.text(`Date: ${dt}`,10,35);
+ doc.text(`Owner (First Party): ${o}`,10,45);
+ doc.text(`Tenant (Second Party): ${t}`,10,53);
+ doc.text(`Property: ${a}`,10,63);
+ doc.text(`1. Monthly Rent: Rs.${r}/-`,10,75);
+ doc.text(`2. Advance: Rs.${d}/-`,10,82);
+ doc.text(`3. Period: 11 Months.`,10,89);
+ doc.text(`4. Rent due on 5th of every month.`,10,96);
+ doc.text(`5. As per Tamil Nadu Rental Act.`,10,103);
+ doc.text(`Owner Sign: ___________  Tenant Sign: ___________`,10,130);
+ doc.text(`Witness 1: ___________  Witness 2: ___________`,10,138);
+ doc.save(`Rental_Agreement_${t}.pdf`);
+ alert("PDF Downloaded! Ippo GPay Rs.199 pannu da: vasantha6112000-1@okicici");
+}
+</script>
+</body>
+</html>
